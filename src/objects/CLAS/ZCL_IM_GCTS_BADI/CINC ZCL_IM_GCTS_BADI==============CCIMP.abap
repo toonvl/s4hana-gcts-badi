@@ -616,39 +616,39 @@ class ltcl_gcts_general_functions implementation.
     endif.
   endmethod.
 
-  METHOD prepare_objects_for_push.
-    DATA: local_object TYPE ty_gcts_badi_object,
-          object       TYPE ty_repository_objects.
-    DATA: ls_tr_key     TYPE e071k,
-          ls_wbo_object TYPE  cl_cts_abap_vcs_organizer_fac=>ty_object.
-    DATA(action) = co_prepare_objects_for_push.
-    LOOP AT tr_objects INTO DATA(ls_tr_objects).
-      CLEAR local_object.
-      IF ls_tr_objects-object <> 'CDAT' AND ls_tr_objects-object <> 'TABU' AND ls_tr_objects-object <> 'VDAT'
-              AND ls_tr_objects-object <> 'TDAT' AND ls_tr_objects-object <> 'ACGR' AND ls_tr_objects-object <> 'UIPC'
-              AND ls_tr_objects-object <> 'SUSK' AND ls_tr_objects-object <> 'ACGT' AND ls_tr_objects-object <> 'UISC'
-              AND ls_tr_objects-object <> 'MERG' AND ls_tr_objects-object <> 'CPKM' AND ls_tr_objects-object <> 'FSL'
-              AND ls_tr_objects-object <> 'DOCV' AND ls_tr_objects-object <> 'TEXT' AND ls_tr_objects-object <> 'F30'
-              AND ls_tr_objects-object <> 'SHI6'.
+  method prepare_objects_for_push.
+    data: local_object type ty_gcts_badi_object,
+          object       type ty_repository_objects.
+    data: ls_tr_key     type e071k,
+          ls_wbo_object type  cl_cts_abap_vcs_organizer_fac=>ty_object.
+    data(action) = co_prepare_objects_for_push.
+    loop at tr_objects into data(ls_tr_objects).
+      clear local_object.
+      if ls_tr_objects-object <> 'CDAT' and ls_tr_objects-object <> 'TABU' and ls_tr_objects-object <> 'VDAT'
+              and ls_tr_objects-object <> 'TDAT' and ls_tr_objects-object <> 'ACGR' and ls_tr_objects-object <> 'UIPC'
+              and ls_tr_objects-object <> 'SUSK' and ls_tr_objects-object <> 'ACGT' and ls_tr_objects-object <> 'UISC'
+              and ls_tr_objects-object <> 'MERG' and ls_tr_objects-object <> 'CPKM' and ls_tr_objects-object <> 'FSL'
+              and ls_tr_objects-object <> 'DOCV' and ls_tr_objects-object <> 'TEXT' and ls_tr_objects-object <> 'F30'
+              and ls_tr_objects-object <> 'SHI6'.
         logger->log_info( action = action info = |Object pgmid: { ls_tr_objects-pgmid }, name: { ls_tr_objects-obj_name } type: { ls_tr_objects-object }| ).
 *     Loop through all the non customizing objects and store them for further processing
         local_object-is_customizing = abap_false.
         object-objname = ls_tr_objects-obj_name.
         object-obj_type = ls_tr_objects-object.
         object-pgmid = ls_tr_objects-pgmid.
-        IF ls_tr_objects-pgmid = 'LIMU'.
-          DATA(full_object) = me->retreive_complete_object( ls_tr_objects ).
-          IF full_object IS INITIAL.
+        if ls_tr_objects-pgmid = 'LIMU'.
+          data(full_object) = me->retreive_complete_object( ls_tr_objects ).
+          if full_object is initial.
 *          If full object could not be retrieved the object would not be added to the return table
-            CONTINUE.
-          ELSE.
+            continue.
+          else.
             object = full_object.
-          ENDIF.
-        ENDIF.
-        DATA(check_object_exists) = me->check_object_exists( object ).
-        IF check_object_exists = abap_true.
-          DATA(ls_tadir) = me->prepare_object( object ).
-          IF NOT line_exists( rt_object_list[ object-object = ls_tadir-obj_name ] ).
+          endif.
+        endif.
+        data(check_object_exists) = me->check_object_exists( object ).
+        if check_object_exists = abap_true.
+          data(ls_tadir) = me->prepare_object( object ).
+          if not line_exists( rt_object_list[ object-object = ls_tadir-obj_name ] ).
             logger->log_info( action = action info = |Appended Tadir: { ls_tadir-pgmid }, { ls_tadir-obj_name }, { ls_tadir-object } to object list| ).
 *           Append object wbo for further checks
             ls_wbo_object-obj_name = ls_tadir-obj_name.
@@ -656,57 +656,57 @@ class ltcl_gcts_general_functions implementation.
             ls_wbo_object-object = ls_tadir-object.
             ls_wbo_object-devclass = ls_tadir-devclass.
             local_object-object_for_wbo = ls_wbo_object.
-            CLEAR ls_wbo_object.
+            clear ls_wbo_object.
 *           Append object for transport request
             local_object-object-object = ls_tadir-obj_name.
             local_object-object-pgmid = ls_tadir-pgmid.
             local_object-object-type = ls_tadir-object.
             local_object-dev_class = ls_tadir-devclass.
             local_object-gen_flag = ls_tadir-genflag.
-            APPEND local_object TO rt_object_list.
-            CLEAR local_object.
-          ENDIF.
-        ELSE.
+            append local_object to rt_object_list.
+            clear local_object.
+          endif.
+        else.
 *           Handle Exception Here
           logger->log_error( action = action info = 'Object does not exist in system').
-          RAISE EXCEPTION TYPE cx_cts_abap_vcs_exception
-            EXPORTING
+          raise exception type cx_cts_abap_vcs_exception
+            exporting
               textid = cx_cts_abap_vcs_exception=>repository_not_found.
-        ENDIF.
-      ENDIF.
-    ENDLOOP.
+        endif.
+      endif.
+    endloop.
 
-    LOOP AT tr_keys INTO ls_tr_key.
-      DATA: lt_objects_to_convert TYPE cl_cts_abap_vcs_organizer_fac=>tt_object.
+    loop at tr_keys into ls_tr_key.
+      data: lt_objects_to_convert type cl_cts_abap_vcs_organizer_fac=>tt_object.
 *     Loop through all the customizing object
       logger->log_info( action = action info = |Customizing Object pgmid: { ls_tr_key-pgmid }, name: { ls_tr_key-objname } type: { ls_tr_key-object }| ).
-      CLEAR local_object.
+      clear local_object.
       local_object-is_customizing = abap_true.
 
-      CLEAR ls_wbo_object.
+      clear ls_wbo_object.
       ls_wbo_object-obj_name = ls_tr_key-mastername.
       ls_wbo_object-pgmid = ls_tr_key-pgmid.
       ls_wbo_object-object = ls_tr_key-mastertype.
-      APPEND ls_tr_key TO ls_wbo_object-e071k.
+      append ls_tr_key to ls_wbo_object-e071k.
 
-      IF ls_wbo_object IS NOT INITIAL.
+      if ls_wbo_object is not initial.
         local_object-object_for_wbo = ls_wbo_object.
-      ENDIF.
+      endif.
 
-      APPEND ls_wbo_object TO lt_objects_to_convert.
-      DATA(lt_objects_converted) = cl_cts_abap_vcs_registry=>convert_objects_to_registry( objects = lt_objects_to_convert ) .
+      append ls_wbo_object to lt_objects_to_convert.
+      data(lt_objects_converted) = cl_cts_abap_vcs_registry=>convert_objects_to_registry( objects = lt_objects_to_convert ) .
 
-      IF line_exists( lt_objects_converted[ obj_name = ls_wbo_object-obj_name ] ).
+      if line_exists( lt_objects_converted[ obj_name = ls_wbo_object-obj_name ] ).
         local_object-object-object = lt_objects_converted[ obj_name = ls_wbo_object-obj_name ]-obj_name.
         local_object-object-pgmid = lt_objects_converted[ obj_name = ls_wbo_object-obj_name ]-pgmid.
         local_object-object-type = lt_objects_converted[ obj_name = ls_wbo_object-obj_name ]-object.
         local_object-object-keys = lt_objects_converted[ obj_name = ls_wbo_object-obj_name ]-keys.
-      ENDIF.
+      endif.
 
-      APPEND local_object TO rt_object_list.
-    ENDLOOP.
+      append local_object to rt_object_list.
+    endloop.
 
-  ENDMETHOD.
+  endmethod.
 
   method get_async_toggle.
     rv_async_toggle = me->commit_async_toggle.
