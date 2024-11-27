@@ -19,15 +19,16 @@
     "OBJNAMELEN":20,
     "PROTECT":"",
     "OBJTRANSP":"2",
-    "LUSER":"SAP",
-    "LDATE":"2000-11-06",
+    "LUSER":"",
+    "LDATE":"0000-00-00",
     "OBJNAMECLS":"1",
     "CURSETTING":"",
     "OBJHASADDR":"",
     "IMPORTABLE":"",
     "OBJCHARSET":"1",
     "MCCATEGORY":"",
-    "MCDOCUID":""
+    "MCDOCUID":"",
+    "ABAP_LANGUAGE_VERSION":""
    }
   ]
  },
@@ -283,6 +284,18 @@
   "data":
   [
    {
+    "LANGUAGE":"1",
+    "OBJECTNAME":"SXCI",
+    "OBJECTTYPE":"L",
+    "DDTEXT":"Business Add-Ins - Implementations"
+   },
+   {
+    "LANGUAGE":"2",
+    "OBJECTNAME":"SXCI",
+    "OBJECTTYPE":"L",
+    "DDTEXT":"Business Add-Ins - Implementations"
+   },
+   {
     "LANGUAGE":"D",
     "OBJECTNAME":"SXCI",
     "OBJECTTYPE":"L",
@@ -290,6 +303,36 @@
    },
    {
     "LANGUAGE":"E",
+    "OBJECTNAME":"SXCI",
+    "OBJECTTYPE":"L",
+    "DDTEXT":"Business Add-Ins - Implementations"
+   },
+   {
+    "LANGUAGE":"F",
+    "OBJECTNAME":"SXCI",
+    "OBJECTTYPE":"L",
+    "DDTEXT":"Business add-ins - implémentations"
+   },
+   {
+    "LANGUAGE":"G",
+    "OBJECTNAME":"SXCI",
+    "OBJECTTYPE":"L",
+    "DDTEXT":"Business Add-Ins - Implementations"
+   },
+   {
+    "LANGUAGE":"M",
+    "OBJECTNAME":"SXCI",
+    "OBJECTTYPE":"L",
+    "DDTEXT":"Business Add-Ins - Implementations"
+   },
+   {
+    "LANGUAGE":"N",
+    "OBJECTNAME":"SXCI",
+    "OBJECTTYPE":"L",
+    "DDTEXT":"Business add-ins - implementaties"
+   },
+   {
+    "LANGUAGE":"쁩",
     "OBJECTNAME":"SXCI",
     "OBJECTTYPE":"L",
     "DDTEXT":"Business Add-Ins - Implementations"

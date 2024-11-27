@@ -212,6 +212,13 @@
     "TYPE":"N",
     "LENGTH":2,
     "DECIMALS":-1
+   },
+   {
+    "NAME":"SRS_ID",
+    "KEY":"",
+    "TYPE":"I",
+    "LENGTH":4,
+    "DECIMALS":-1
    }
   ],
   "properties":

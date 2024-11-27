@@ -1,41 +1,27 @@
 [
  {
-  "table":"SEOCOMPO",
+  "table":"PERMISSION",
   "nametab":
   [
    {
-    "NAME":"CLSNAME",
+    "NAME":"CLIENT_PAK",
     "KEY":"X",
     "TYPE":"C",
     "LENGTH":30,
     "DECIMALS":-1
    },
    {
-    "NAME":"CMPNAME",
+    "NAME":"INTF_NAME",
     "KEY":"X",
     "TYPE":"C",
     "LENGTH":30,
     "DECIMALS":-1
    },
    {
-    "NAME":"CMPTYPE",
+    "NAME":"ERR_SEVER",
     "KEY":"",
-    "TYPE":"N",
-    "LENGTH":1,
-    "DECIMALS":-1
-   },
-   {
-    "NAME":"MTDTYPE",
-    "KEY":"",
-    "TYPE":"N",
-    "LENGTH":1,
-    "DECIMALS":-1
-   },
-   {
-    "NAME":"MTDTYPE2",
-    "KEY":"",
-    "TYPE":"N",
-    "LENGTH":2,
+    "TYPE":"C",
+    "LENGTH":4,
     "DECIMALS":-1
    }
   ],

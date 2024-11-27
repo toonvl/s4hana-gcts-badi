@@ -1,41 +1,27 @@
 [
  {
-  "table":"SEOCOMPO",
+  "table":"TDEVCT",
   "nametab":
   [
    {
-    "NAME":"CLSNAME",
+    "NAME":"DEVCLASS",
     "KEY":"X",
     "TYPE":"C",
     "LENGTH":30,
     "DECIMALS":-1
    },
    {
-    "NAME":"CMPNAME",
+    "NAME":"SPRAS",
     "KEY":"X",
+    "TYPE":"L",
+    "LENGTH":1,
+    "DECIMALS":-1
+   },
+   {
+    "NAME":"CTEXT",
+    "KEY":"",
     "TYPE":"C",
-    "LENGTH":30,
-    "DECIMALS":-1
-   },
-   {
-    "NAME":"CMPTYPE",
-    "KEY":"",
-    "TYPE":"N",
-    "LENGTH":1,
-    "DECIMALS":-1
-   },
-   {
-    "NAME":"MTDTYPE",
-    "KEY":"",
-    "TYPE":"N",
-    "LENGTH":1,
-    "DECIMALS":-1
-   },
-   {
-    "NAME":"MTDTYPE2",
-    "KEY":"",
-    "TYPE":"N",
-    "LENGTH":2,
+    "LENGTH":60,
     "DECIMALS":-1
    }
   ],

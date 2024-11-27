@@ -1,51 +1,19 @@
 [
  {
-  "table":"SMODILOG",
-  "data":
-  [
-   {
-    "OBJ_TYPE":"SXCI",
-    "OBJ_NAME":"ZGCTS_BADI",
-    "SUB_TYPE":"SXCI",
-    "SUB_NAME":"ZGCTS_BADI",
-    "INT_TYPE":"",
-    "INT_NAME":"",
-    "OPERATION":"IMP",
-    "MAIN_PROG":"CTS_REQUEST_CHECK",
-    "INCLUDE":"",
-    "MOD_NAME":"",
-    "MOD_LANGU":"E",
-    "MOD_USER":"SAP",
-    "MOD_DATE":"2022-05-06",
-    "MOD_TIME":"14:20:32",
-    "ACTIVE":"",
-    "INACTIVE":"",
-    "UPGRADE":"",
-    "PRE_CORR":"",
-    "PROT_ONLY":"",
-    "UPG_MODE":"",
-    "MARK":"",
-    "SPAU":"",
-    "TRKORR":"",
-    "SPAU_CODE":""
-   }
-  ]
- },
- {
   "table":"SXC_ATTR",
   "data":
   [
    {
     "IMP_NAME":"ZGCTS_BADI",
     "VERSION":"",
-    "ACTIVE":"",
+    "ACTIVE":"X",
     "MST_LANG":"E",
-    "ANAME":"SAP",
-    "ADATE":"2022-05-06",
-    "ATIME":"14:20:32",
-    "UNAME":"SAP",
-    "UDATE":"2022-05-06",
-    "UTIME":"14:20:32",
+    "ANAME":"TVANLISHOUT",
+    "ADATE":"2024-11-13",
+    "ATIME":"23:23:40",
+    "UNAME":"TVANLISHOUT",
+    "UDATE":"2024-11-13",
+    "UTIME":"23:23:31",
     "LAYER":"",
     "MIG_ENHNAME":""
    }
@@ -57,7 +25,42 @@
   [
    {
     "IMP_NAME":"ZGCTS_BADI",
+    "SPRSL":"1",
+    "TEXT":"GCTS BAdI"
+   },
+   {
+    "IMP_NAME":"ZGCTS_BADI",
+    "SPRSL":"2",
+    "TEXT":"GCTS BAdI"
+   },
+   {
+    "IMP_NAME":"ZGCTS_BADI",
     "SPRSL":"E",
+    "TEXT":"GCTS BAdI"
+   },
+   {
+    "IMP_NAME":"ZGCTS_BADI",
+    "SPRSL":"F",
+    "TEXT":"GCTS BAdI"
+   },
+   {
+    "IMP_NAME":"ZGCTS_BADI",
+    "SPRSL":"G",
+    "TEXT":"GCTS BAdI"
+   },
+   {
+    "IMP_NAME":"ZGCTS_BADI",
+    "SPRSL":"M",
+    "TEXT":"GCTS BAdI"
+   },
+   {
+    "IMP_NAME":"ZGCTS_BADI",
+    "SPRSL":"N",
+    "TEXT":"GCTS BAdI"
+   },
+   {
+    "IMP_NAME":"ZGCTS_BADI",
+    "SPRSL":"쁩",
     "TEXT":"GCTS BAdI"
    }
   ]
@@ -132,7 +135,7 @@
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP",
     "SRCDEP":"",
-    "DEVCLASS":"$TMP",
+    "DEVCLASS":"ZBRU_CA_GCTS",
     "GENFLAG":"",
     "EDTFLAG":"",
     "CPROJECT":" L",

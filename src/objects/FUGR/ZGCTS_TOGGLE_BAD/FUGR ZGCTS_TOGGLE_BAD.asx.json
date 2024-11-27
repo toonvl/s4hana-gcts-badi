@@ -38,6 +38,422 @@
   "data":
   [
    {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit dynam. zu deaktivierenden CUA-Funkt."
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_KEYTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit den Keys der zu transport. Einträge"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der nicht zu aktivierenden CUA-Funktionen"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXTRACT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der gerade sichtbaren Daten (Anzeigetabelle"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"FCODE",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"gewünschte Funktion des Bausteins"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"LAST_ACT_ENTRY",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Index der Cursorposition in der Anzeigetabelle"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"SAVING_CORRECTION_FAILED",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Fehler beim Sichern der Korrektureinträge"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"TOTAL",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle, mit allen von der DB gelesenen Daten"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UCOMM",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"letztes User-command innerhalb der Viewpflege"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UPDATE_REQUIRED",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Flag: Einträge verändert, Sichern erforderlich"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit dynam. zu deaktivierenden CUA-Funkt."
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_KEYTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit den Keys der zu transport. Einträge"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der nicht zu aktivierenden CUA-Funktionen"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXTRACT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der gerade sichtbaren Daten (Anzeigetabelle"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"FCODE",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"gewünschte Funktion des Bausteins"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"LAST_ACT_ENTRY",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Index der Cursorposition in der Anzeigetabelle"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"SAVING_CORRECTION_FAILED",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Fehler beim Sichern der Korrektureinträge"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"TOTAL",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle, mit allen von der DB gelesenen Daten"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UCOMM",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"letztes User-command innerhalb der Viewpflege"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UPDATE_REQUIRED",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Flag: Einträge verändert, Sichern erforderlich"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
     "SPRAS":"E",
     "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
     "PARAMETER":"CORR_NUMBER",
@@ -239,6 +655,1046 @@
    },
    {
     "SPRAS":"E",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit dynam. zu deaktivierenden CUA-Funkt."
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_KEYTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit den Keys der zu transport. Einträge"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der nicht zu aktivierenden CUA-Funktionen"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXTRACT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der gerade sichtbaren Daten (Anzeigetabelle"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"FCODE",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"gewünschte Funktion des Bausteins"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"LAST_ACT_ENTRY",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Index der Cursorposition in der Anzeigetabelle"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"SAVING_CORRECTION_FAILED",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Fehler beim Sichern der Korrektureinträge"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"TOTAL",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle, mit allen von der DB gelesenen Daten"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UCOMM",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"letztes User-command innerhalb der Viewpflege"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UPDATE_REQUIRED",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Flag: Einträge verändert, Sichern erforderlich"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit dynam. zu deaktivierenden CUA-Funkt."
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_KEYTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit den Keys der zu transport. Einträge"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der nicht zu aktivierenden CUA-Funktionen"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXTRACT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der gerade sichtbaren Daten (Anzeigetabelle"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"FCODE",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"gewünschte Funktion des Bausteins"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"LAST_ACT_ENTRY",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Index der Cursorposition in der Anzeigetabelle"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"SAVING_CORRECTION_FAILED",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Fehler beim Sichern der Korrektureinträge"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"TOTAL",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle, mit allen von der DB gelesenen Daten"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UCOMM",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"letztes User-command innerhalb der Viewpflege"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UPDATE_REQUIRED",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Flag: Einträge verändert, Sichern erforderlich"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit dynam. zu deaktivierenden CUA-Funkt."
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_KEYTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit den Keys der zu transport. Einträge"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der nicht zu aktivierenden CUA-Funktionen"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXTRACT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der gerade sichtbaren Daten (Anzeigetabelle"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"FCODE",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"gewünschte Funktion des Bausteins"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"LAST_ACT_ENTRY",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Index der Cursorposition in der Anzeigetabelle"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"SAVING_CORRECTION_FAILED",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Fehler beim Sichern der Korrektureinträge"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"TOTAL",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle, mit allen von der DB gelesenen Daten"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UCOMM",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"letztes User-command innerhalb der Viewpflege"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UPDATE_REQUIRED",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Flag: Einträge verändert, Sichern erforderlich"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit dynam. zu deaktivierenden CUA-Funkt."
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_KEYTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit den Keys der zu transport. Einträge"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der nicht zu aktivierenden CUA-Funktionen"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXTRACT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der gerade sichtbaren Daten (Anzeigetabelle"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"FCODE",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"gewünschte Funktion des Bausteins"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"LAST_ACT_ENTRY",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Index der Cursorposition in der Anzeigetabelle"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"SAVING_CORRECTION_FAILED",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Fehler beim Sichern der Korrektureinträge"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"TOTAL",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle, mit allen von der DB gelesenen Daten"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UCOMM",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"letztes User-command innerhalb der Viewpflege"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UPDATE_REQUIRED",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Flag: Einträge verändert, Sichern erforderlich"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit dynam. zu deaktivierenden CUA-Funkt."
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_NAMTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabellen-Felder"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_KEYTAB",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle mit den Keys der zu transport. Einträge"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"CORR_NUMBER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer für durchgeführte Änderungen"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DBA_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für den DB-Zugriff"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"DPL_SELLIST",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Selektionsbedingungen für die Anzeige"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXCL_CUA_FUNCT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der nicht zu aktivierenden CUA-Funktionen"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"EXTRACT",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tab. der gerade sichtbaren Daten (Anzeigetabelle"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"FCODE",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"gewünschte Funktion des Bausteins"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"LAST_ACT_ENTRY",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Index der Cursorposition in der Anzeigetabelle"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"MISSING_CORR_NUMBER",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Korrekturnummer fehlt"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"SAVING_CORRECTION_FAILED",
+    "KIND":"X",
+    "VERSION":1,
+    "STEXT":"Fehler beim Sichern der Korrektureinträge"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"TOTAL",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Tabelle, mit allen von der DB gelesenen Daten"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UCOMM",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"letztes User-command innerhalb der Viewpflege"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"UPDATE_REQUIRED",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Flag: Einträge verändert, Sichern erforderlich"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_ACTION",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Aktion mit Tabelle: anz./änd./transp. (S/U/T)"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"VIEW_NAME",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Name der Tabelle"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "PARAMETER":"X_HEADER",
+    "KIND":"P",
+    "VERSION":1,
+    "STEXT":"Kontrollblocktabelle für die Tabelle"
+   },
+   {
+    "SPRAS":"쁩",
     "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
     "PARAMETER":"X_NAMTAB",
     "KIND":"P",
@@ -811,7 +2267,7 @@
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP",
     "SRCDEP":"",
-    "DEVCLASS":"$TMP",
+    "DEVCLASS":"ZBRU_CA_GCTS",
     "GENFLAG":"",
     "EDTFLAG":"",
     "CPROJECT":" L",
@@ -868,12 +2324,82 @@
   "data":
   [
    {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Extended Table Maintenance: Upper Level"
+   },
+   {
+    "SPRAS":"1",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Lower-level extended table maintenance"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Extended Table Maintenance: Upper Level"
+   },
+   {
+    "SPRAS":"2",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Lower-level extended table maintenance"
+   },
+   {
     "SPRAS":"E",
     "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
     "STEXT":"Extended Table Maintenance: Upper Level"
    },
    {
     "SPRAS":"E",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Lower-level extended table maintenance"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Extended Table Maintenance: Upper Level"
+   },
+   {
+    "SPRAS":"F",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Lower-level extended table maintenance"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Extended Table Maintenance: Upper Level"
+   },
+   {
+    "SPRAS":"G",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Lower-level extended table maintenance"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Extended Table Maintenance: Upper Level"
+   },
+   {
+    "SPRAS":"M",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Lower-level extended table maintenance"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Extended Table Maintenance: Upper Level"
+   },
+   {
+    "SPRAS":"N",
+    "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Lower-level extended table maintenance"
+   },
+   {
+    "SPRAS":"쁩",
+    "FUNCNAME":"TABLEFRAME_ZGCTS_TOGGLE_BAD",
+    "STEXT":"Extended Table Maintenance: Upper Level"
+   },
+   {
+    "SPRAS":"쁩",
     "FUNCNAME":"TABLEPROC_ZGCTS_TOGGLE_BAD",
     "STEXT":"Lower-level extended table maintenance"
    }
@@ -894,7 +2420,42 @@
   "data":
   [
    {
+    "SPRAS":"1",
+    "AREA":"ZGCTS_TOGGLE_BAD",
+    "AREAT":"Extended Table Maintenance (Generated)"
+   },
+   {
+    "SPRAS":"2",
+    "AREA":"ZGCTS_TOGGLE_BAD",
+    "AREAT":"Extended Table Maintenance (Generated)"
+   },
+   {
     "SPRAS":"E",
+    "AREA":"ZGCTS_TOGGLE_BAD",
+    "AREAT":"Extended Table Maintenance (Generated)"
+   },
+   {
+    "SPRAS":"F",
+    "AREA":"ZGCTS_TOGGLE_BAD",
+    "AREAT":"Extended Table Maintenance (Generated)"
+   },
+   {
+    "SPRAS":"G",
+    "AREA":"ZGCTS_TOGGLE_BAD",
+    "AREAT":"Extended Table Maintenance (Generated)"
+   },
+   {
+    "SPRAS":"M",
+    "AREA":"ZGCTS_TOGGLE_BAD",
+    "AREAT":"Extended Table Maintenance (Generated)"
+   },
+   {
+    "SPRAS":"N",
+    "AREA":"ZGCTS_TOGGLE_BAD",
+    "AREAT":"Extended Table Maintenance (Generated)"
+   },
+   {
+    "SPRAS":"쁩",
     "AREA":"ZGCTS_TOGGLE_BAD",
     "AREAT":"Extended Table Maintenance (Generated)"
    }
@@ -910,9 +2471,7 @@
     "DBAPL":"S",
     "DBNA":"D$",
     "SUBC":"I",
-    "UNAM":"SAP*",
     "RSTAT":"S",
-    "RMAND":"000",
     "FIXPT":"X",
     "LDBNAME":"D$S",
     "UCCHECK":"X"
@@ -923,9 +2482,7 @@
     "DBAPL":"S",
     "DBNA":"D$",
     "SUBC":"I",
-    "UNAM":"SAP*",
     "RSTAT":"S",
-    "RMAND":"000",
     "FIXPT":"X",
     "LDBNAME":"D$S",
     "UCCHECK":"X"
@@ -935,7 +2492,6 @@
     "SQLX":"X",
     "EDTX":"X",
     "SUBC":"I",
-    "UNAM":"SAP*",
     "LEVL":"753",
     "RLOAD":"E"
    },
@@ -944,7 +2500,6 @@
     "SQLX":"X",
     "EDTX":"X",
     "SUBC":"I",
-    "UNAM":"SAP*",
     "LEVL":"753",
     "RLOAD":"E"
    },
@@ -952,7 +2507,6 @@
     "NAME":"LZGCTS_TOGGLE_BADT00",
     "EDTX":"X",
     "SUBC":"I",
-    "UNAM":"SAP*",
     "LEVL":"753",
     "RLOAD":"E"
    },
@@ -962,8 +2516,6 @@
     "DBNA":"D$",
     "SUBC":"I",
     "APPL":"S",
-    "UNAM":"SAP",
-    "RMAND":"000",
     "FIXPT":"X",
     "LDBNAME":"D$S",
     "UCCHECK":"X"
@@ -975,8 +2527,6 @@
     "DBNA":"D$",
     "SUBC":"I",
     "APPL":"S",
-    "UNAM":"SAP",
-    "RMAND":"000",
     "FIXPT":"X",
     "LDBNAME":"D$S",
     "UCCHECK":"X"
@@ -988,8 +2538,6 @@
     "DBNA":"D$",
     "SUBC":"I",
     "APPL":"S",
-    "UNAM":"SAP",
-    "RMAND":"000",
     "FIXPT":"X",
     "LDBNAME":"D$S",
     "UCCHECK":"X"
@@ -1000,9 +2548,7 @@
     "DBAPL":"S",
     "DBNA":"D$",
     "SUBC":"I",
-    "UNAM":"SAP*",
     "RSTAT":"S",
-    "RMAND":"000",
     "FIXPT":"X",
     "LDBNAME":"D$S",
     "UCCHECK":"X"
@@ -1014,8 +2560,6 @@
     "DBNA":"D$",
     "SUBC":"F",
     "APPL":"S",
-    "UNAM":"SAP",
-    "RMAND":"000",
     "RLOAD":"E",
     "FIXPT":"X",
     "LDBNAME":"D$S",
@@ -1029,12 +2573,82 @@
   [
    {
     "NAME":"LZGCTS_TOGGLE_BADUXX",
+    "SPRSL":"1",
+    "TEXT":"LZGCTS_TOGGLE_BADUXX"
+   },
+   {
+    "NAME":"LZGCTS_TOGGLE_BADUXX",
+    "SPRSL":"2",
+    "TEXT":"LZGCTS_TOGGLE_BADUXX"
+   },
+   {
+    "NAME":"LZGCTS_TOGGLE_BADUXX",
     "SPRSL":"E",
     "TEXT":"LZGCTS_TOGGLE_BADUXX"
    },
    {
+    "NAME":"LZGCTS_TOGGLE_BADUXX",
+    "SPRSL":"F",
+    "TEXT":"LZGCTS_TOGGLE_BADUXX"
+   },
+   {
+    "NAME":"LZGCTS_TOGGLE_BADUXX",
+    "SPRSL":"G",
+    "TEXT":"LZGCTS_TOGGLE_BADUXX"
+   },
+   {
+    "NAME":"LZGCTS_TOGGLE_BADUXX",
+    "SPRSL":"M",
+    "TEXT":"LZGCTS_TOGGLE_BADUXX"
+   },
+   {
+    "NAME":"LZGCTS_TOGGLE_BADUXX",
+    "SPRSL":"N",
+    "TEXT":"LZGCTS_TOGGLE_BADUXX"
+   },
+   {
+    "NAME":"LZGCTS_TOGGLE_BADUXX",
+    "SPRSL":"쁩",
+    "TEXT":"LZGCTS_TOGGLE_BADUXX"
+   },
+   {
+    "NAME":"SAPLZGCTS_TOGGLE_BAD",
+    "SPRSL":"1",
+    "TEXT":""
+   },
+   {
+    "NAME":"SAPLZGCTS_TOGGLE_BAD",
+    "SPRSL":"2",
+    "TEXT":""
+   },
+   {
     "NAME":"SAPLZGCTS_TOGGLE_BAD",
     "SPRSL":"E",
+    "TEXT":""
+   },
+   {
+    "NAME":"SAPLZGCTS_TOGGLE_BAD",
+    "SPRSL":"F",
+    "TEXT":""
+   },
+   {
+    "NAME":"SAPLZGCTS_TOGGLE_BAD",
+    "SPRSL":"G",
+    "TEXT":""
+   },
+   {
+    "NAME":"SAPLZGCTS_TOGGLE_BAD",
+    "SPRSL":"M",
+    "TEXT":""
+   },
+   {
+    "NAME":"SAPLZGCTS_TOGGLE_BAD",
+    "SPRSL":"N",
+    "TEXT":""
+   },
+   {
+    "NAME":"SAPLZGCTS_TOGGLE_BAD",
+    "SPRSL":"쁩",
     "TEXT":""
    }
   ]

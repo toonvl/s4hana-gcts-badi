@@ -19,15 +19,16 @@
     "OBJNAMELEN":0,
     "PROTECT":"",
     "OBJTRANSP":"",
-    "LUSER":"SAP",
-    "LDATE":"2022-05-04",
+    "LUSER":"",
+    "LDATE":"0000-00-00",
     "OBJNAMECLS":"",
     "CURSETTING":"",
     "OBJHASADDR":"",
     "IMPORTABLE":"3",
     "OBJCHARSET":"",
     "MCCATEGORY":"",
-    "MCDOCUID":""
+    "MCDOCUID":"",
+    "ABAP_LANGUAGE_VERSION":""
    }
   ]
  },
@@ -60,7 +61,7 @@
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP",
     "SRCDEP":"",
-    "DEVCLASS":"$TMP",
+    "DEVCLASS":"ZBRU_CA_GCTS",
     "GENFLAG":"",
     "EDTFLAG":"",
     "CPROJECT":" L",

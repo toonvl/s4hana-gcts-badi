@@ -22,8 +22,8 @@
     "HDAT":"",
     "SPRA":"E",
     "CUPO":"",
-    "DGEN":"2022-05-04",
-    "TGEN":"10:56:02"
+    "DGEN":"2022-10-20",
+    "TGEN":"13:28:23"
    }
   ]
  },
@@ -34,7 +34,49 @@
    {
     "PROG":"SAPLZGCTS_TOGGLE_BAD",
     "DYNR":100,
+    "LANG":"1",
+    "DTXT":"View Maintenance: Overview Screen ZGCTS_BADI_TOGGL"
+   },
+   {
+    "PROG":"SAPLZGCTS_TOGGLE_BAD",
+    "DYNR":100,
+    "LANG":"2",
+    "DTXT":"View Maintenance: Overview Screen ZGCTS_BADI_TOGGL"
+   },
+   {
+    "PROG":"SAPLZGCTS_TOGGLE_BAD",
+    "DYNR":100,
     "LANG":"E",
+    "DTXT":"View Maintenance: Overview Screen ZGCTS_BADI_TOGGL"
+   },
+   {
+    "PROG":"SAPLZGCTS_TOGGLE_BAD",
+    "DYNR":100,
+    "LANG":"F",
+    "DTXT":"View Maintenance: Overview Screen ZGCTS_BADI_TOGGL"
+   },
+   {
+    "PROG":"SAPLZGCTS_TOGGLE_BAD",
+    "DYNR":100,
+    "LANG":"G",
+    "DTXT":"View Maintenance: Overview Screen ZGCTS_BADI_TOGGL"
+   },
+   {
+    "PROG":"SAPLZGCTS_TOGGLE_BAD",
+    "DYNR":100,
+    "LANG":"M",
+    "DTXT":"View Maintenance: Overview Screen ZGCTS_BADI_TOGGL"
+   },
+   {
+    "PROG":"SAPLZGCTS_TOGGLE_BAD",
+    "DYNR":100,
+    "LANG":"N",
+    "DTXT":"View Maintenance: Overview Screen ZGCTS_BADI_TOGGL"
+   },
+   {
+    "PROG":"SAPLZGCTS_TOGGLE_BAD",
+    "DYNR":100,
+    "LANG":"쁩",
     "DTXT":"View Maintenance: Overview Screen ZGCTS_BADI_TOGGL"
    }
   ]

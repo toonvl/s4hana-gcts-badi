@@ -23,8 +23,8 @@
     "APPLCLASS":"",
     "AUTHCLASS":0,
     "AS4USER":"SAP",
-    "AS4DATE":"2022-03-09",
-    "AS4TIME":"15:38:18",
+    "AS4DATE":"0000-00-00",
+    "AS4TIME":"00:00:00",
     "DOMMASTER":"",
     "RESERVEDOM":"",
     "DOMGLOBAL":"",
@@ -43,7 +43,56 @@
   [
    {
     "DOMNAME":"ZGCTS_BADI_ADD_FTR",
+    "DDLANGUAGE":"1",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Domain for the additional feature for gcts badi"
+   },
+   {
+    "DOMNAME":"ZGCTS_BADI_ADD_FTR",
+    "DDLANGUAGE":"2",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Domain for the additional feature for gcts badi"
+   },
+   {
+    "DOMNAME":"ZGCTS_BADI_ADD_FTR",
     "DDLANGUAGE":"E",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Domain for the additional feature for gcts badi"
+   },
+   {
+    "DOMNAME":"ZGCTS_BADI_ADD_FTR",
+    "DDLANGUAGE":"F",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Domain for the additional feature for gcts badi"
+   },
+   {
+    "DOMNAME":"ZGCTS_BADI_ADD_FTR",
+    "DDLANGUAGE":"G",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Domain for the additional feature for gcts badi"
+   },
+   {
+    "DOMNAME":"ZGCTS_BADI_ADD_FTR",
+    "DDLANGUAGE":"M",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Domain for the additional feature for gcts badi"
+   },
+   {
+    "DOMNAME":"ZGCTS_BADI_ADD_FTR",
+    "DDLANGUAGE":"N",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Domain for the additional feature for gcts badi"
+   },
+   {
+    "DOMNAME":"ZGCTS_BADI_ADD_FTR",
+    "DDLANGUAGE":"쁩",
     "AS4LOCAL":"N",
     "AS4VERS":0,
     "DDTEXT":"Domain for the additional feature for gcts badi"
@@ -62,7 +111,7 @@
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP",
     "SRCDEP":"",
-    "DEVCLASS":"$TMP",
+    "DEVCLASS":"ZBRU_CA_GCTS",
     "GENFLAG":"",
     "EDTFLAG":"",
     "CPROJECT":" L",
