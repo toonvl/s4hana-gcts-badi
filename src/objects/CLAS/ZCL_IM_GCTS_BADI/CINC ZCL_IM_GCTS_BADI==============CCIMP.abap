@@ -36,6 +36,17 @@ class ltcl_gcts_general_functions definition.
              unresolved_objects type tt_gcts_badi_object,
            end of ty_resolve_object_response.
 
+    types:
+      begin    of          ty_repository_objects_cache,
+        repository_json    type  if_cts_abap_vcs_repository=>ty_repository_json,
+        repository_objects type if_cts_abap_vcs_repository=>tt_objects,
+        repository_id      type scts_abap_vcs_repository_id,
+      end of ty_repository_objects_cache.
+
+    types tt_repository_objects_cache type standard table of ty_repository_objects_cache with default key.
+
+    class-data: repository_cache_table type tt_repository_objects_cache.
+
     data: logger  type ref to if_cts_abap_vcs_logger.
     "! Constructor of the class, sets the value for the package, which would be used for filtering out objects for further gcts processes.
     "!
@@ -233,6 +244,16 @@ class ltcl_gcts_general_functions definition.
     methods get_unique_repository
       returning value(rv_unique_repository) type abap_boolean.
 
+    "! Class method to retrieve the parent packages of a package
+    "!
+    "! @parameter package        | package name for which the parent needs to retrieved
+    "!
+    "! @parameter r_packages     | list of packages
+    class-methods get_parent_packages
+      importing
+                package           type devclass
+      returning value(r_packages) type cl_cts_abap_vcs_organizer_fac=>tt_object.
+
   private section.
     data: package type string.
     data: commit_async_toggle        type boolean,
@@ -259,16 +280,6 @@ class ltcl_gcts_general_functions definition.
         !iv_package     type devclass
       returning
         value(rv_found) type boolean .
-
-    "! Private class method to retrieve the parent packages of a package
-    "!
-    "! @parameter package     | package name for which the parent needs to retrieved
-    "!
-    "! @parameter r_packages     | list of packages
-    class-methods get_parent_packages
-      importing
-                package           type devclass
-      returning value(r_packages) type cl_cts_abap_vcs_organizer_fac=>tt_object.
 endclass.
 
 class ltcl_gcts_general_functions implementation.
@@ -888,9 +899,14 @@ class ltcl_gcts_general_functions implementation.
                 if is_resolved = abap_true.
                   exit.
                 endif.
-                data(repository) = system->get_repository_by_id( ls_available_repository-id ).
-                data(repository_objects) = repository->get_objects(  ).
-                data(repository_json) = repository->to_json_object(  ).
+                if line_exists( repository_cache_table[ repository_id = ls_available_repository-id ] ).
+                  data(repository_objects) = repository_cache_table[ repository_id = ls_available_repository-id ]-repository_objects.
+                  data(repository_json) = repository_cache_table[ repository_id = ls_available_repository-id ]-repository_json.
+                else.
+                  data(repository) = system->get_repository_by_id( ls_available_repository-id ).
+                  repository_objects = repository->get_objects(  ).
+                  repository_json = repository->to_json_object(  ).
+                endif.
                 if lines( lt_object_with_packages ) > 0.
 *                Process Workbench Objects
                   loop at lt_object_with_packages into data(ls_object_with_packages).
@@ -955,7 +971,7 @@ class ltcl_gcts_general_functions implementation.
       data(repositories_data) = system->get_repositories_data( refresh = abap_true ).
       if line_exists( repositories_data[ vsid = vsid ] ).
         data(ls_repository_raw) = repositories_data[ vsid = vsid ].
-        data(ls_repository2) = cl_cts_abap_vcs_api_facade=>get_repository( request = conv #( ls_repository_raw-rid ) ).
+        data(ls_repository2) = cl_cts_abap_vcs_api_facade=>get_repository( request = value #( repository = ls_repository_raw-rid ) ).
         loop at object_list into ls_object.
           ls_object-associated_repo = ls_repository2-result.
           ls_object-associated_repo_id = ls_repository2-result-rid.
@@ -1062,19 +1078,12 @@ class ltcl_gcts_badi_trigger definition.
     constants co_scope_tr type string value 'TRANSPORT'.
 *   Constants for the logger class.
     constants co_badi_trigger type string value 'BADI_TRIGGER_CLASS'.
-    constants co_check_badi_trigger type string value 'CHECK_BADI_TRIGGER'.
+    constants co_check_badi_trigger type string value 'CHECK_OTHER_BADI_TRIGGER'.
+    constants co_check_user_trigger type string value 'CHECK_USER_TRIGGER'.
     data:      logger  type ref to if_cts_abap_vcs_logger.
-    types:
-      begin    of          ty_repository_objects_cache,
-        repository_json    type  if_cts_abap_vcs_repository=>ty_repository_json,
-        repository_objects type if_cts_abap_vcs_repository=>tt_objects,
-        repository_id      type scts_abap_vcs_repository_id,
-      end of ty_repository_objects_cache.
 
-    types tt_repository_objects_cache type standard table of ty_repository_objects_cache with default key.
     types tt_users type standard table of string with default key.
 
-    class-data: repository_cache_table type tt_repository_objects_cache.
     types:
       begin of ty_badi_trigger,
         scope             type string,
@@ -1083,13 +1092,17 @@ class ltcl_gcts_badi_trigger definition.
         registry          type boolean,
         local_object_list type boolean,
       end of ty_badi_trigger .
+
     methods constructor
       importing badi_trigger_toggle type boolean
                 badi_trigger_info   type string
-                target_system       type tr_target
-                object_list         type ltcl_gcts_general_functions=>tt_gcts_badi_object.
-    methods check_badi_trigger
-      returning value(is_okay) type boolean.
+                target_system       type tr_target.
+    methods check_other_badi_triggers
+      returning value(rs_is_okay) type boolean.
+    methods check_user_trigger
+      returning value(rs_is_okay) type boolean.
+    methods set_object_list
+      importing it_object_list type ltcl_gcts_general_functions=>tt_gcts_badi_object.
   private section.
     data: badi_trigger_toggle type boolean,
           badi_trigger_info   type string,
@@ -1099,14 +1112,14 @@ endclass.
 
 class ltcl_gcts_badi_trigger implementation.
 
-  method check_badi_trigger.
+  method check_other_badi_triggers.
     data(action) = co_check_badi_trigger.
     data: ls_badi_trigger_req type ty_badi_trigger.
     if me->badi_trigger_toggle = abap_false.
 *     Check if the badi trigger is set or not. If it is not set, then immediately return a false flag
 *     This would indicate that the badi cannot be continued.
       logger->log_info( action = action info = |BAdI trigger is not set. Gcts badi would not continue execution| ).
-      is_okay = abap_false.
+      rs_is_okay = abap_false.
       return.
     endif.
     /ui2/cl_json=>deserialize(
@@ -1118,6 +1131,143 @@ class ltcl_gcts_badi_trigger implementation.
      ).
     logger->log_info( action = action info = |BAdI Trigger with scope : { ls_badi_trigger_req-scope }| ).
     if ls_badi_trigger_req-scope = co_scope_user.
+***************************************************************************
+*   The user check has already passed and because of this it can be skipped
+***************************************************************************
+      rs_is_okay = abap_true.
+      return.
+    elseif ls_badi_trigger_req-scope = co_scope_tr.
+****************************************************
+*   if the scope is 'TRANSPORT'
+*   The badi would run for every target system that is a valid VSID. This would mean for all systems which has the tms parameter 'NON_ABAP_SYSTEM' and value as 'VCS'.
+****************************************************
+      logger->log_info( action = action info = |BAdI Trigger : target system { me->target_system }| ).
+      data(create_parameter_object) = cl_cts_tms_tp_parameter_config=>create( ).
+      try.
+          data(gcts_param) = create_parameter_object->if_cts_tms_tpprofile_parameter~get_parameter_value( sysname = me->target_system name = if_cts_abap_vcs_system=>co_tms_vcs_system ).
+          if gcts_param = if_cts_abap_vcs_system=>co_tms_vcs_system_value.
+            logger->log_info( action = action info = |'NON_ABAP_SYSTEM' TMS parameter is VCS. GCTS BAdI triggered | ).
+            rs_is_okay = abap_true.
+            return.
+          else.
+            logger->log_info( action = action info = |'NON_ABAP_SYSTEM' TMS parameter is not VCS. GCTS BAdI cannot be triggered | ).
+            rs_is_okay = abap_false.
+            return.
+          endif.
+        catch cx_cts_tms_config_exception.
+          logger->log_error( action = action info = |Error while retrieving 'NON_ABAP_SYSTEM' TMS parameter. GCTS BAdI cannot be triggered | ).
+          rs_is_okay = abap_false.
+          return.
+      endtry.
+    elseif ls_badi_trigger_req-scope = co_scope_objects.
+**********************************************************
+*   if the scope is 'OBJECTS'
+*   if the registry field is set as true, then the registry is checked if the object existing in the TR are already registered then the badi is continued
+*   if the local_object_list is set to true then, the local object list of all the repositories are also checked. This is a very expensive call
+*   Use this only in case the other two scopes does not fit the need
+**********************************************************
+      logger->log_info( action = action info = |BAdI Trigger : registry: { ls_badi_trigger_req-registry }, Local Object List : { ls_badi_trigger_req-local_object_list  }| ).
+      loop at me->object_list into data(ls_object).
+        if ls_badi_trigger_req-registry = abap_true.
+*        Check if the objects in the TR exists in the registry.
+          data: objects type cl_cts_abap_vcs_organizer_fac=>tt_object.
+          logger->log_info( action = action info = 'Start of Action' ).
+          logger->log_info( action = action info = |Searching for object : { ls_object-object_for_wbo-obj_name }| ).
+          append ls_object-object_for_wbo to objects.
+          try.
+              data(rv_checked_object) = cl_cts_abap_vcs_registry_fac=>check_objects(
+                objects        = objects
+                package_lookup = cl_cts_abap_vcs_registry_fac=>co_package_lookup_recursive ).
+              loop at rv_checked_object into data(ls_checked_object).
+                if ls_checked_object-repository is not initial and ls_checked_object-repository <> ''.
+                  rs_is_okay = abap_true.
+                  return.
+                endif.
+              endloop.
+            catch cx_cts_abap_vcs_exception.
+            catch cx_cts_github_api_exception.
+          endtry.
+        endif.
+        if ls_badi_trigger_req-local_object_list = abap_true.
+*       Check if the objects in the TR exists in the local object list.
+*       This would be very expensive since every repository object list needs to be retrieved and the looped through to identify
+          logger->log_info( action = action info = |BAdI Trigger for local object list has been set| ).
+          try.
+              data(system) = cl_cts_abap_vcs_system_factory=>get_instance( )->get_default_system( ).
+              data(lt_available_repositories) = system->get_repositories( refresh = abap_true ).
+              clear ltcl_gcts_general_functions=>repository_cache_table.
+              loop at lt_available_repositories into data(ls_available_repisitory).
+                data(repository) = system->get_repository_by_id( ls_available_repisitory-id ).
+                data(repository_objects) = repository->get_objects(  ).
+                data(ls_repository_json) = repository->to_json_object(  ).
+*               Set cache for repository objects for avoid retrieval again
+                append value #( repository_json = ls_repository_json
+                                repository_objects = repository_objects
+                                repository_id = ls_available_repisitory-id ) to ltcl_gcts_general_functions=>repository_cache_table.
+                if line_exists( repository_objects[ object = ls_object-object_for_wbo-obj_name pgmid = ls_object-object_for_wbo-pgmid type = ls_object-object_for_wbo-object ] ).
+                  logger->log_info( action = action info = |Object { ls_object-object_for_wbo-obj_name },{ ls_object-object_for_wbo-object } exists in repository { ls_available_repisitory-id } | ).
+                  logger->log_info( action = action info = |gCTS BAdI trigger check successful for full local object list | ).
+                  rs_is_okay = abap_true.
+                  return.
+                elseif ls_object-dev_class is not initial.
+*                If the object doesn't exists check for its package and the super packages as well
+                  data(lt_package_heirarchy) = ltcl_gcts_general_functions=>get_parent_packages( package = ls_object-dev_class ).
+                  loop at lt_package_heirarchy into data(ls_super_package).
+                    if line_exists( repository_objects[ object = ls_super_package-obj_name pgmid = ls_super_package-pgmid type = ls_super_package-object ] ).
+                      logger->log_info( action = action info = |Object's super package { ls_super_package-obj_name } exists in repository { ls_available_repisitory-id } | ).
+                      logger->log_info( action = action info = |gCTS BAdI trigger check successful for full local object list | ).
+                      rs_is_okay = abap_true.
+                      return.
+                    endif.
+                  endloop.
+                endif.
+              endloop.
+            catch cx_cts_abap_vcs_exception into data(exc).
+              logger->log_error( action = action info = |Error while BAdI Trigger check for local objects| ).
+              logger->log_error( action = action info = |Error Message : { exc->get_message(  ) } | ).
+          endtry.
+        endif.
+      endloop.
+    else.
+*      The scope defined for the badi trigger is wrong. The trigger cannot be set.
+      logger->log_error( action = action info = 'The scope provided in the badi trigger toggle is not a valid value' ).
+      rs_is_okay = abap_false.
+      return.
+    endif.
+*   Default return is false. All the true cases immediately returns for further processing.
+    rs_is_okay = abap_false.
+  endmethod.
+
+  method constructor.
+    logger ?= new cl_cts_abap_vcs_logger( section = co_badi_trigger ).
+    me->badi_trigger_toggle = badi_trigger_toggle.
+    me->badi_trigger_info = badi_trigger_info.
+    me->target_system = target_system.
+  endmethod.
+
+  method set_object_list.
+    me->object_list = it_object_list.
+  endmethod.
+
+  method check_user_trigger.
+    data(action) = co_check_user_trigger.
+    data: ls_badi_trigger_req type ty_badi_trigger.
+    if me->badi_trigger_toggle = abap_false.
+*     Check if the badi trigger is set or not. If it is not set, then immediately return a false flag
+*     This would indicate that the badi cannot be continued.
+      logger->log_info( action = action info = |BAdI trigger is not set. Gcts badi would not continue execution| ).
+      rs_is_okay = abap_false.
+      return.
+    endif.
+    /ui2/cl_json=>deserialize(
+       exporting
+         json = badi_trigger_info
+         pretty_name = /ui2/cl_json=>pretty_mode-camel_case
+       changing
+         data = ls_badi_trigger_req
+     ).
+    if ls_badi_trigger_req-scope = co_scope_user.
+      logger->log_info( action = action info = |BAdI Trigger with user scope| ).
 ****************************************************
 *   if the scope is 'USER', then it would take in consideration the fields for user and table, the user field can be single value or an array of values.
 *   The table could be provided with a table name which has in it a column field 'bname'.
@@ -1148,107 +1298,15 @@ class ltcl_gcts_badi_trigger implementation.
         loop at lt_usernames into data(ls_username).
           if to_upper( ls_username ) = sy-uname.
             logger->log_info( action = action info = |User { sy-uname } found in the approved users who can run the gcts BAdI| ).
-            is_okay = abap_true.
+            rs_is_okay = abap_true.
             return.
           endif.
         endloop.
       endif.
-    elseif ls_badi_trigger_req-scope = co_scope_tr.
-****************************************************
-*   if the scope is 'TRANSPORT'
-*   The badi would run for every target system that is a valid VSID. This would mean for all systems which has the tms parameter 'NON_ABAP_SYSTEM' and value as 'VCS'.
-****************************************************
-      logger->log_info( action = action info = |BAdI Trigger : target system { me->target_system }| ).
-      data(create_parameter_object) = cl_cts_tms_tp_parameter_config=>create( ).
-      try.
-          data(gcts_param) = create_parameter_object->if_cts_tms_tpprofile_parameter~get_parameter_value( sysname = me->target_system name = if_cts_abap_vcs_system=>co_tms_vcs_system ).
-          if gcts_param = if_cts_abap_vcs_system=>co_tms_vcs_system_value.
-            logger->log_info( action = action info = |'NON_ABAP_SYSTEM' TMS parameter is VCS. GCTS BAdI triggered | ).
-            is_okay = abap_true.
-            return.
-          else.
-            logger->log_info( action = action info = |'NON_ABAP_SYSTEM' TMS parameter is not VCS. GCTS BAdI cannot be triggered | ).
-            is_okay = abap_false.
-            return.
-          endif.
-        catch cx_cts_tms_config_exception.
-          logger->log_error( action = action info = |Error while retrieving 'NON_ABAP_SYSTEM' TMS parameter. GCTS BAdI cannot be triggered | ).
-          is_okay = abap_false.
-          return.
-      endtry.
-    elseif ls_badi_trigger_req-scope = co_scope_objects.
-**********************************************************
-*   if the scope is 'OBJECTS'
-*   if the registry field is set as true, then the registry is checked if the object existing in the TR are already registered then the badi is continued
-*   if the local_object_list is set to true then, the local object list of all the repositories are also checked. This is a very expensive call
-*   Use this only in case the other two scopes does not fit the need
-**********************************************************
-      logger->log_info( action = action info = |BAdI Trigger : registry: { ls_badi_trigger_req-registry }, Local Object List : { ls_badi_trigger_req-local_object_list  }| ).
-      loop at me->object_list into data(ls_object).
-        if ls_badi_trigger_req-registry = abap_true.
-*        Check if the objects in the TR exists in the registry.
-          data: objects type cl_cts_abap_vcs_organizer_fac=>tt_object.
-          logger->log_info( action = action info = 'Start of Action' ).
-          logger->log_info( action = action info = |Searching for object : { ls_object-object_for_wbo-obj_name }| ).
-          append ls_object-object_for_wbo to objects.
-          try.
-              data(rv_checked_object) = cl_cts_abap_vcs_registry_fac=>check_objects(
-                objects        = objects
-                package_lookup = cl_cts_abap_vcs_registry_fac=>co_package_lookup_recursive ).
-              loop at rv_checked_object into data(ls_checked_object).
-                if ls_checked_object-repository is not initial and ls_checked_object-repository <> ''.
-                  is_okay = abap_true.
-                  return.
-                endif.
-              endloop.
-            catch cx_cts_abap_vcs_exception.
-            catch cx_cts_github_api_exception.
-          endtry.
-        endif.
-        if ls_badi_trigger_req-local_object_list = abap_true.
-*       Check if the objects in the TR exists in the local object list.
-*       This would be very expensive since every repository object list needs to be retrieved and the looped through to identify
-          logger->log_info( action = action info = |BAdI Trigger for local object list has been set| ).
-          try.
-              data(system) = cl_cts_abap_vcs_system_factory=>get_instance( )->get_default_system( ).
-              data(lt_available_repositories) = system->get_repositories( refresh = abap_true ).
-              loop at lt_available_repositories into data(ls_available_repisitory).
-                data(repository) = system->get_repository_by_id( ls_available_repisitory-id ).
-                data(repository_objects) = repository->get_objects(  ).
-                data(ls_repository_json) = repository->to_json_object(  ).
-*               Set cache for repository objects for avoid retrieval again
-                append value #( repository_json = ls_repository_json
-                                repository_objects = repository_objects
-                                repository_id = ls_available_repisitory-id ) to repository_cache_table.
-                if line_exists( repository_objects[ object = ls_object-object_for_wbo-obj_name pgmid = ls_object-object_for_wbo-pgmid type = ls_object-object_for_wbo-object ] ).
-                  logger->log_info( action = action info = |Object { ls_object-object_for_wbo-obj_name },{ ls_object-object_for_wbo-object } exists in repository { ls_available_repisitory-id } | ).
-                  logger->log_info( action = action info = |gCTS BAdI trigger check successful for full local object list | ).
-                  is_okay = abap_true.
-                  return.
-                endif.
-              endloop.
-            catch cx_cts_abap_vcs_exception into data(exc).
-              logger->log_error( action = action info = |Error while BAdI Trigger check for local objects| ).
-              logger->log_error( action = action info = |Error Message : { exc->get_message(  ) } | ).
-          endtry.
-        endif.
-      endloop.
     else.
-*      The scope defined for the badi trigger is wrong. The trigger cannot be set.
-      logger->log_error( action = action info = 'The scope provided in the badi trigger toggle is not a valid value' ).
-      is_okay = abap_false.
-      return.
+*     Continue since the scope is not user check.
+      rs_is_okay = abap_true.
     endif.
-*   Default return is false. All the true cases immediately returns for further processing.
-    is_okay = abap_false.
-  endmethod.
-
-  method constructor.
-    logger ?= new cl_cts_abap_vcs_logger( section = co_badi_trigger ).
-    me->badi_trigger_toggle = badi_trigger_toggle.
-    me->badi_trigger_info = badi_trigger_info.
-    me->target_system = target_system.
-    me->object_list = object_list.
   endmethod.
 
 endclass.
@@ -1737,7 +1795,7 @@ class ltcl_gcts_branch_handling implementation.
     logger->log_info( action = action info = |Branch handling info : { branch_handling_info } | ).
     data: ls_branch_info_syntax type branch_info_syntax.
     if branch_handling = abap_true and branch_handling_info is not initial.
-      data(dynamic_branch_value) = match( val = branch_handling_info regex = `\{.+\}` ).
+      data(dynamic_branch_value) = match( val = branch_handling_info pcre = `\{.+\}` ).
       if dynamic_branch_value is initial or dynamic_branch_value = ''.
 *         Static branch name
         branch = branch_handling_info.
